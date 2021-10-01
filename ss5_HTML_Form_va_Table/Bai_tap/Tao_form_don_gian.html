@@ -3,20 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <title>Tạo form đơn giản</title>
+    <style>
+        table{
+            background-color: white;
+            font-family: inherit;
+        }
+        th{
+            color: blue;
+        }
+        td{
+            color: orange;
+        }
+    </style>
 </head>
 <body>
-<form>
-    <table>
-        <caption> SỞ THÍCH CỦA BẠN</caption>
-        <tr>
-            <td>Họ và tên</td>
-            <td><input type="text" name="Họ và tên" size="20" ></td>
-        </tr>
-        <tr>
-            
-        </tr>
-    </table>
-</form>
+<div align="center">
+    <form action="Tao_form_don_gian.html" method="get">
+        <table bgcolor="black">
+            <tr>
+                <th colspan="4" bgcolor="orange" ><g font-style="inherit">SỞ THÍCH CỦA BẠN</g></th>
+            </tr>
+            <tr>
+                <th>Họ và tên</th>
+                <td><label><input type="text" name="Họ và tên" size="20" ></label></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><label><input type="email" name="email" value="email"></label></td>
+            </tr>
+            <tr>
+                <th>Sở thích</th>
+                <td><label><input type="checkbox" name="hobby1"> Thể thao</label></td>
+                <td><label><input type="checkbox" name="hobby2"> Âm nhạc</label></td>
+                <td><label><input type="checkbox" name="hobby3"> Đọc sách</label></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><label><input type="checkbox" name="hobby4"> Lướt web</label></td>
+                <td><label><input type="checkbox" name="hobby5"> Chơi game</label></td>
+                <td><label><input type="checkbox" name="hobby6"> Điện ảnh</label></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><label><input type="checkbox" name="hobby7"> Du lịch</label></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Gửi thông tin"></td>
+                <td><input type="reset" value="Nhập lại"></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div align="center" >
+    <form action="Tao_form_don_gian.html" method="post">
+        <p> ĐĂNG KÝ HỌC VIÊN</p>
+        Họ và tên: <label><input type="text" name="yourname2"></label>
+        <br>
+        <br>
+        Ngày sinh: <label><input type="datetime-local" value=""></label>
+        <br>
+        <br>
+        Giới tính: <label><input type="radio" value="Men" name="gender"></label> Nam
+        <label><input type="radio" value="women" name="gender"></label> Nữ
+        <br>
+        <br>
+        Địa chỉ: <textarea rows="10" cols="20" style="background-color: orange" >
+
+        </textarea>
+        <br>
+        <br>
+        Lớp: <select name="class">
+        <option value="class 1">Lớp 1 </option>
+        <option value="class 2">Lớp 2 </option>
+        <option value="class 3">Lớp 3 </option>
+    </select>
+        Email: <label><input type="email" value="email"></label>
+        <br>
+        <br>
+        Điện thoại: <label><input type="text" value="038+"></label>
+        <br>
+        <br>
+        <input type="submit" value="sign up">
+        <input type="reset" value="reset">
+    </form>
+</div>
 
 </body>
 </html>
