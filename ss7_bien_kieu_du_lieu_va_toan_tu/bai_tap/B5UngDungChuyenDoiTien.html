@@ -15,57 +15,48 @@
 </head>
 <body>
 <div>
-    <form method="post" action="">
-        <table>
-            <tr>
-                <th>Amount</th>
-                <th></th>
-                <th>Form currency</th>
-                <th></th>
-                <th>To currency</th>
-                <th></th>
-                <th><input type="button" id="convert" value="Convert" onclick="chuyendoi()"></th>
-            </tr>
-            <tr>
-                <td><input type="number" id="Amount" ></td>
-                <th></th>
-                <td>
-                    <select id="formcurency" >
+    <table border="1">
+        <tr>
+            <th>Amount</th>
+            <th>Form currency</th>
+            <th>To currency</th>
+            <th><input type="button" id="convert" value="Convert" onclick="convert()"></th>
+        </tr>
+        <tr>
+            <td><label><input type="number" id="Amount" ></label></td>
+
+            <td>
+                <label>
+                    <select id="select1" >
                         <option value="VND">VietNam</option>
                         <option value="USD">USD</option>
                     </select>
-                </td>
-                <th></th>
-                <td>
-                    <select id="tocurency">
+                </label>
+            </td>
+            <td>
+                <label>
+                    <select id="select2">
                         <option value="VND">VietNam</option>
                         <option value="USD">USD</option>
                     </select>
-                </td>
-            </tr>
-        </table>
-    </form>
-<p id="result"> </p>
+                </label>
+            </td>
+        </tr>
+    </table>
+    <br>
+<p id="result"> so tien </p>
 </div>
 <script>
-    function chuyendoi() {
-        let x = parseInt(document.getElementById("Amount").value);
-        let tocurency = document.getElementById('tocurency').value;
-        let formcurency = document.getElementById('formcurency').value;
-        let result
-        if (x = undefined ) {
-            alert("Vui lòng điền số tiền:") ;
-        }
-        else{
-            if ( tocurency == formcurency)  {
-             document.getElementById('result').innerHTML = +x
-            }
-        } else{
-            if ( tocurency == USD and formcurency == VND )
-            { document.getElementById("result").innerHTML = result = x / 22000}
-            else {document.getElementById("result").innerHTML = result = x * 22000}
-        }
-
+    function convert() {
+        let amou = document.getElementById("Amount").value;
+        let x = parseInt(amou);
+        let select1 = document.getElementById('tocurency').value;
+        let select2 = document.getElementById('select2').value;
+        if (select1 === "VND" && select2 === 'USD' )
+         document.getElementById("result").innerHTML ="result" +(x/22000);  else
+            if (select1 === 'USD' && select2 === "VND")
+             document.getElementById("result").innerHTML ="result" +(x*22000); else
+                document.getElementById("result").innerHTML ="result" +x;
     }
 </script>
 </body>
