@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+    <style>
+        td{
+            width: 100px;
+        }
+        th{
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <form method="post" action="">
+        <table>
+            <tr>
+                <th>Amount</th>
+                <th></th>
+                <th>Form currency</th>
+                <th></th>
+                <th>To currency</th>
+                <th></th>
+                <th><input type="button" id="convert" value="Convert" onclick="chuyendoi()"></th>
+            </tr>
+            <tr>
+                <td><input type="number" id="Amount" ></td>
+                <th></th>
+                <td>
+                    <select id="formcurency" >
+                        <option value="VND">VietNam</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </td>
+                <th></th>
+                <td>
+                    <select id="tocurency">
+                        <option value="VND">VietNam</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+<p id="result"> </p>
+</div>
+<script>
+    function chuyendoi() {
+        let x = parseInt(document.getElementById("Amount").value);
+        let tocurency = document.getElementById('tocurency').value;
+        let formcurency = document.getElementById('formcurency').value;
+        let result
+        if (x = undefined ) {
+            alert("Vui lòng điền số tiền:") ;
+        }
+        else{
+            if ( tocurency == formcurency)  {
+             document.getElementById('result').innerHTML = +x
+            }
+        } else{
+            if ( tocurency == USD and formcurency == VND )
+            { document.getElementById("result").innerHTML = result = x / 22000}
+            else {document.getElementById("result").innerHTML = result = x * 22000}
+        }
+
+    }
+</script>
+</body>
+</html>

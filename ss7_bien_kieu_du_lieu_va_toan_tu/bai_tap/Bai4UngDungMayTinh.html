@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính</title>
+</head>
+<body>
+<form action="" method="post">
+    <label><input type="number" id="number1"></label>
+    <label><input type="number" id="number2"></label>
+</form>
+<br>
+<label><input type="button" value="cong" onclick="cong()"></label>
+<label><input type="button" value="tru" onclick="tru()"></label>
+<label><input type="button" value="nhan" onclick="nhan()"></label>
+<label><input type="button" value="chia" onclick="chia()"></label>
+<br>
+<p id="ketqua"> </p>
+<script>
+    function cong() {
+        let a = parseInt(document.getElementById("number1").value);
+        let b = parseInt(document.getElementById("number2").value);
+       let addition = a + b ;
+        document.getElementById("ketqua").innerHTML = +addition;
+    }
+    function tru() {
+        let a = parseInt(document.getElementById("number1").value);
+        let b = parseInt(document.getElementById("number2").value);
+        let suctraction = a - b ;
+        document.getElementById("ketqua").innerHTML = +suctraction;
+
+    }
+    function nhan() {
+        let a = parseInt(document.getElementById("number1").value);
+        let b = parseInt(document.getElementById("number2").value);
+        let tich = a * b ;
+        document.getElementById("ketqua").innerHTML = +tich ;
+    }
+    function chia() {
+        let a = parseInt(document.getElementById("number1").value);
+        let b = parseInt(document.getElementById("number2").value);
+        let div
+        if (b != 0) {
+            div = a / b ;
+            document.getElementById("ketqua").innerHTML = div ;
+        } else { document.getElementById("ketqua").innerHTML = " không thực hiên được"}
+    }
+</script>
+</body>
+</html>
