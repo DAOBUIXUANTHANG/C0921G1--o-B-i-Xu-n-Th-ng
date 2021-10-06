@@ -24,19 +24,19 @@
             <th></th>
         </tr>
         <tr>
-            <td><label><input type="text" placeholder="nhập số tiền cần đổi" id="Amount" ></label></td>
+            <td><label><input type="text" placeholder="nhập số tiền cần đổi" id="amount" ></label></td>
             <td>
                 <label>
                     <select id="select1" >
-                        <option value="VND">VND</option>
-                        <option value="USD">USD</option>
+                        <option value="vnd">VND</option>
+                        <option value="usd">USD</option>
                     </select>
                 </label>
             </td>
             <td>
                 <label>
                     <select id="select2">
-                        <option value="VND">VND</option>
+                        <option value="vnd">VND</option>
                         <option value="USD">USD</option>
                     </select>
                 </label>
@@ -44,20 +44,21 @@
         </tr>
     </table>
     <br>
-    <input type="button" id="convert" value="Convert" onclick="chuyendoi()">
+    <input type="button" id="convert" value="Convert" onclick="chuyenDoi()">
     <br>
     <p id="result"> so tien </p>
 </div>
 <script>
-    function chuyendoi() {
-        let x = parseInt(document.getElementById("Amount").value);
+    function chuyenDoi() {
+        let giaTriTienNhap = parseInt(document.getElementById("amount").value);
         let select1 = document.getElementById('select1').value;
         let select2 = document.getElementById('select2').value;
-        if (select1 === "VND" && select2 === "USD" )
-         document.getElementById("result").innerHTML ="result" +(x/22000);  else
-            if (select1 === "USD" && select2 === "VND")
-             document.getElementById("result").innerHTML ="result" +(x*22000); else
-                document.getElementById("result").innerText ="result" +x;
+        if (select1 === "vnd" && select2 === "USD" )
+         document.getElementById("result").innerHTML ="result" +(giaTriTienNhap/22000);
+        else if (select1 === "USD" && select2 === "vnd")
+             document.getElementById("result").innerHTML ="result" +(giaTriTienNhap*22000);
+        else
+                document.getElementById("result").innerText ="result" +giaTriTienNhap;
     }
 </script>
 </body>
