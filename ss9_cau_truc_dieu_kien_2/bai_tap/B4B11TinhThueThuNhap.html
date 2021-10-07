@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 11: Viết chương trình tính thuế thu nhập cá nhân-->
+<script>
+    let thuNhap = parseInt(prompt("Nhậ số tiền (tr vnd)"))
+    let thue
+    // kiểm tra đầu nhập
+    if (thuNhap > 0){
+        if (thuNhap <= 5) {
+
+            thue = thuNhap*0.5
+            alert("tiền điện là: (tr vnd)"+thue)
+
+        } else if (thuNhap <= 10){
+
+            thue = thuNhap*0.1
+            alert("tiền điện là: (tr vnd)"+thue)
+
+        } else if (thuNhap <= 18){
+
+            thue = thuNhap*0.15
+            alert("tiền điện là: (tr vnd)"+thue)
+        } else {
+            thue = thuNhap*0.2
+            alert("tiền điện là: (tr vnd)"+thue)
+        }
+    } else
+        alert("vui lòng nhập đúng số tiện")
+
+</script>
+</body>
+</html>

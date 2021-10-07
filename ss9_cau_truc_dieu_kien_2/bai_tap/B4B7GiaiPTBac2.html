@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("nhập a "))
+    let b = parseInt(prompt("nhập b "))
+    let c = parseInt(prompt("nhập c "))
+    let deta = (b*b) - (4*a*c)
+    let x1
+    let x2
+    if (deta < 0){
+        alert("phương trình vô ngiệm")
+    } else if (deta === 0){
+        alert(" phương trình co nghiem:"+( (-b)/2/a) )
+    } else {
+        x1 = (-b+ Math.sqrt(deta))/(2*a)
+        x2 = (-b- Math.sqrt(deta))/(2*a)
+        alert(" phương trình co nghiem:"+x1 +x2 )
+    }
+</script>
+</body>
+</html>

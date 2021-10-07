@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p> May Tinh</p>
+<table>
+    <tr>
+        <td colspan="4">
+            <label>
+                <input id="hienThi" type="text">
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <th><input type="button" value="1" onclick="Nhap(this.value)"></th>
+        <th><input type="button" value="2" onclick="Nhap(this.value)"></th>
+        <th><input type="button" value="3" onclick="Nhap(this.value)"></th>
+        <th><input type="button" value="+" onclick="Nhap(this.value)"></th>
+    </tr>
+
+    <tr>
+        <th><label><input type="button" value="4" onclick="Nhap(this.value)"></label></th>
+        <th><label><input type="button" value="5" onclick="Nhap(this.value)"></label></th>
+        <th><label><input type="button" value="6" onclick="Nhap(this.value)"></label></th>
+        <th><label><input type="button" value="-" onclick="Nhap(this.value)"></label></th>
+    </tr>
+
+    <tr>
+        <th><label><input type="button" value="7" onclick="Nhap(this.value)"></label></th>
+        <th><label><input type="button" value="8" onclick="Nhap(this.value)"></label></th>
+        <th><label><input type="button" value="9" onclick="Nhap(this.value)"></label></th>
+        <th><label><input type="button" value="*" onclick="Nhap(this.value)"></label></th>
+    </tr>
+
+    <tr>
+        <th><label><input type="button" value="C" onclick="xoa()"></label></th>
+        <th><label><input type="button" value="0" onclick="Nhap(this.value)"></label></th>
+        <th><label><input type="button" value="=" onclick="tinhToan()"></label></th>
+        <th><label><input type="button" value="/" onclick="Nhap(this.value)"></label></th>
+    </tr>
+
+</table>
+
+<script>
+
+function Nhap(so) {
+    document.getElementById("hienThi").value = document.getElementById("hienThi").value + so
+}
+function tinhToan() {
+    let bieuthuc = document.getElementById("hienThi").value ;
+    document.getElementById("hienThi").value = eval(bieuthuc);
+
+}
+function xoa() {
+    document.getElementById("hienThi").value = "";
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.-->
+
+<script>
+    let tien = parseInt(prompt("nhập số tiền: "))
+    let laiSuat = parseInt(prompt("nhập hệ số lãi suất (theo tháng): "))
+    let n = parseInt(prompt("nhập số tháng: "))
+    let tienPhaiTra
+    // kiểm tra đầu nhập
+    if ( tien >= 0 && 1 >= laiSuat >= 0 && n >= 1 ){
+        tienPhaiTra = tien * (1+laiSuat)**n
+        alert("tiền phải trả là:" +tienPhaiTra)
+
+    } else {
+        alert("nhap sai")
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

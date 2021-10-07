@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng-->
+<script>
+    let doanhSo = parseInt(prompt("Nhập doanh số bán được(vnd):"  ))
+    let hoaHong
+    if (doanhSo < 500) {
+        if (doanhSo > 200)
+        {
+            hoaHong = doanhSo * 1.05
+            alert("Hoa hồng bạn nhận được là: " + hoaHong)
+
+        } else
+            alert("bạn không nhận được hoa hồng")
+
+    } else hoaHong = doanhSo * 1.1
+    alert("Hoa hồng bạn nhận được là: " + hoaHong)
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Do you love me </h2>
+<button id="dongY" onclick="yes()">yes</button>
+<div id="viTri"><button id="khongDongY" onclick="no()">No</button></div>
+<script>
+    let viTriNutNo = null
+    viTriNutNo = document.getElementById("viTri")
+    viTriNutNo.style.position
+    viTriNutNo.style.left = "0px"
+    viTriNutNo.style.top = "0px"
+
+    function yes() {
+        alert("<3")
+    }
+    function no() {
+        viTriNutNo.style.left = parseInt(viTriNutNo.style.left).value + Math.floor(Math.random()*100)+ "px"
+        viTriNutNo.style.top = parseInt(viTriNutNo.style.top).value + Math.floor(Math.random()*100)+ "px"
+
+    }
+</script>
+</body>
+</html>
