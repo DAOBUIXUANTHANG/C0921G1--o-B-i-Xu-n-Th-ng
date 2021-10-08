@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("nhập n:" )) ;
+    let count = 0 ;
+    let n = 2
+    let i = 2
+    let xacNhan
+    for( ;count< number; ){
+        while ( i<(n-1) ){
+            if ( n%i ===0 ){
+                xacNhan = false
+                break
+            } else i = i+1 ;
+        }
+
+        
+        if(xacNhan=false){
+            xacNhan = false
+        } else {
+            xacNhan = true
+        }
+        ;
+
+        if (xacNhan=true){
+            count = count+1;
+            document.write(n);
+            document.write('<br>')
+
+        };
+
+    }
+</script>
+</body>
+</html>
