@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5-->
+
+<script>
+    let a ;
+    let b  ;
+    let count = 0
+    let c ;
+    a = 1
+    b = 1
+
+    while(count<= 5 ){
+        c = a + b ; // F0 = F1 + F2
+
+
+        a = b;  // gán F1 thành Fn-1
+
+        b = c ; // gán F2 thành Fn
+
+        if ( c%5 ===0){
+            document.write(c);
+
+            document.write("<br>")
+
+            count++;
+
+        }
+
+
+
+    }
+</script>
+</body>
+</html>

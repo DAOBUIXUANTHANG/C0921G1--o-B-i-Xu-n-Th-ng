@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a ;
+    let b  ;
+    let count = 0
+    let c ;
+    a = 1
+    b = 1
+
+    while(count<= 20 ){
+        c = a + b ; // F0 = F1 + F2
+
+        document.write(a);
+        document.write("<br>");
+
+        a = b;  // gán F1 thành Fn-1
+
+        b = c ; // gán F2 thành Fn
+
+        count++
+
+    }
+</script>
+</body>
+</html>
