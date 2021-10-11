@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // let chieuDai = parseInt(prompt("nhap chieu dai:"))
+    // let chieuRong = parseInt(prompt("nhap chieu rong:"))
+
+    let a ;
+    let b ;
+    // for ( a = 0; a <= 20 ; a++){
+    //     for(b=0 ; b<= 100 ; b++){
+    //         if (a===0|| a=== 20 || b===0|| b===100 ){
+    //
+    //             document.write("*");
+    //
+    //         } else {
+    //
+    //             document.write("&nbsp&nbsp");
+    //
+    //         }
+    //     }
+    //
+    //     document.writeln("<br>")
+    // }
+
+    for( a = 0 ; a<= 20 ; a++){
+        if ( a===0 ||a ===20 ){
+
+            for (b = 0 ; b<= 100 ; b++){
+
+                document.write("*");
+            }
+        } else {
+            for (b=0; b<= 100 ; b++){
+
+                if (b===0 || b=== 100 ){
+
+                    document.write("*");
+                } else {
+
+                    document.write("&nbsp&nbsp");
+                }
+            }
+
+        }
+        document.write("<br>")
+    }
+
+
+</script>
+</body>
+</html>

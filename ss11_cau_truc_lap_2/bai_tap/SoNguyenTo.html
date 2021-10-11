@@ -5,15 +5,20 @@
     <title>Title</title>
 </head>
 <body>
+<p>Số Nguyên tố là </p>
+<br>
+
 <script>
     let number = parseInt(prompt("nhap so:" )) ;
     let count = 0 ;
     let n = 2
-    let i 
+    let i
     let check
     while (count<number){
-        for (i=2; i<n; i++){
-            check = true
+        check = true
+
+        for (i =2 ; i<n; i++){
+
             if (n%i===0){
                 check = false
                 break
@@ -22,7 +27,8 @@
             document.write(n)
             document.write("<br>")
             count++
-        } n++
+        } ;
+        n++
     }
 </script>
 </body>

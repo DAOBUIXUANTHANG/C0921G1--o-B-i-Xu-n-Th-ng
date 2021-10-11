@@ -6,16 +6,22 @@
 </head>
 <body>
 <script>
-    let number = 5
+    let number = parseInt(prompt("nhập số giai thừa"))
     // số nguyên dương
     // let number = parseInt(prompt("nhập số nguyên dương:"))
     let i ;
     let tich = 1;
-    for (i=1;i<number;i++){
+    if(number>0){
 
-        tich = i * tich;
+        for (i=1;i<number;i++){
+
+            tich = i * tich;
+        }
+        document.write("giai thừa của 4 là:" +tich);
+    } else {
+        alert("nhập sai")
+        number = parseInt(prompt("nhập số giai thừa"))
     }
-    document.write("giai thừa của 4 là:" +tich);
 
 </script>
 </body>

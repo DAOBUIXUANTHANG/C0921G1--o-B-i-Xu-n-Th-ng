@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="play" onclick="playgame()">play</button>
+
+<script>
+
+function playgame() {
+    let min = parseInt(prompt("nhập khoản giá trị bạn muốn đoán (Min):" ))
+    let max = parseInt(prompt("nhập khoản giá trị bạn muốn đoán (Max):" ))
+    let numberRandom
+    numberRandom = Math.floor(Math.random() * (max - min + 1)) + min;
+    document.write(numberRandom)
+    let i = parseInt(prompt("nhập số muốn đoán"))
+    let count = 1
+    while (i !== numberRandom){
+
+
+        if (i< numberRandom){
+            alert("số bạn nhập bé hơn số random:");
+
+            i = parseInt(prompt("đoán sai, xin đoán lại"));
+
+            count++;
+
+        } else if (i > numberRandom) {
+
+            alert("số bạn nhập lớn hơn số random:");
+
+            i = parseInt(prompt("đoán sai, xin đoán lại"));
+
+            count++
+        } else {
+            alert("bạn đã đoán đúng")
+            count++
+        }
+        if (count===3 ){
+            alert("het co hoi");
+            break
+        }
+    }
+
+
+
+
+
+
+}
+</script>
+</body>
+</html>
