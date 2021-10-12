@@ -60,7 +60,26 @@
 
         for (j = size; j >= 0 ; j--){
 
-            if (j < (size - i)){
+            if (j <= (size - i)){
+
+                document.write("*")
+
+                //&nbsp; 1 nữa dấu cách
+
+            } else {
+
+                document.write("&nbsp;&nbsp")
+            }
+
+        } document.write("<br>")
+
+    }
+
+    for ( i = 0; i <=size ; i++){
+
+        for (j = 0; j <= size ; j++){
+
+            if (j >=  i){
 
                 document.write("*")
 
