@@ -10,29 +10,21 @@
 <script>
 
     let str = prompt("nhập chữ")
-
     let chuHoa = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
     let chuThuong = 'abcdefghijklmnopqrstuvwxyz';
-
     let result = [];
-
     let x ;
 
     for( x=0; x<str.length; x++)
     {
         if(chuHoa.indexOf(str[x]) !== -1) {
-
             result.push(str[x].toLowerCase());
 
         } else if(chuThuong.indexOf(str[x]) !== -1) {
-
             result.push(str[x].toUpperCase());
 
         } else {
-
             result.push(str[x]);
-
         }
     }
 

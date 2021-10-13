@@ -13,45 +13,20 @@
 <script>
 
     let number = prompt("nhập số bạn muốn :");
-
     let str = number.toString() ; // chuyển định dạng nhập thành chuỗi ;
-
     let giaTri = [str[0]];
-
     let x ;
 
     for ( x=0 ; x < str.length ; x++){
-
         if ( (str[x]%2===0) && (str[x+1]%2===0) ) {
-
             giaTri.push("-",str[x]);
-
         } else {
-
             giaTri.push(str[x]);
-
         }
-
-
     }
-    document.write(giaTri.join(""))
 
-    // var num = window.prompt();
-    // var str = num.toString();
-    // var result = [str[0]];
-    //
-    // for (var x = 1; x < str.length; x++) {
-    //
-    //     if (str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
-    //
-    //         result.push('-', str[x]);
-    //
-    //     } else {
-    //
-    //         result.push(str[x]);
-    //     }
-    // }
-    // document.write(result.join(''));
+    document.write(giaTri.join(""));
+
 
 </script>
 

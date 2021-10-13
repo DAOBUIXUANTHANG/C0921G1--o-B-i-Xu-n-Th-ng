@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.-->
+
+<script>
+    let number = [] ;
+    let i ;
+    let nhap;
+
+    // nhập số nguyên
+
+    for (i=0 ; i<10 ; ){
+
+        nhap = prompt("nhap so nguyen thu:" +(i+1) );
+        if ((nhap >0 || nhap <= 0)&&parseInt(nhap)== nhap){
+            number.push(nhap);
+            i++;
+        } else {
+            alert("nhập sai:")
+        }
+    }
+
+    document.write("các phần tử trước khi sắp xếp :"+number.join(";")+"<br>");
+
+    document.write("các phần tử sau khi sắp xếp:"+number.sort(function (a, b) {
+        return b-a
+    }));
+</script>
+
+
+</body>
+</html>
