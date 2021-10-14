@@ -9,19 +9,24 @@
             và thay thế các ký tự này bởi ký tự ( _ )-->
 
 <script>
-    let mangKyTu = prompt("nhập mảng kí tự:");
-    let kiTu1 = "-";
-    let kiTu2 = "_";
-    let result = [];
 
-    for (let i = 0; i< mangKyTu.length; i++){
-        if (kiTu1.indexOf(mangKyTu[i]) !== -1){
+    let mangKyTu = ["h1",12,"-",3,"-",122,44,"hai"]
 
+    for (let i = 0; i< mangKyTu.length ; i++){
+        if (mangKyTu[i]=== "-"){
+            mangKyTu[i]= "_"
         }
-
     }
 
-    document.write(mangKyTu)
+    // for (let i = 0; i< mangKyTu.length; i++){
+    //     if (kiTu1.indexOf('-') !== -1){
+    //         mangKyTu[i]= '_';
+    //
+    //     }
+    //
+    // }
+
+    document.write(mangKyTu.join(" "))
 
 </script>
 </body>

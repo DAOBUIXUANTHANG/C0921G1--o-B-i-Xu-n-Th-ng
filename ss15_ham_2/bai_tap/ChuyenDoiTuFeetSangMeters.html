@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>aaaaaa</h2>
+
+    <select id="chonDonVi" onclick="chuyenDoi()" >
+        <option  value="meter">Meter</option>
+        <option value="feet">Feet</option>
+    </select>
+    <label><input type="text" id="giaTriDauVao" placeholder=" nhập độ dài" size="100"></label>
+    <label><input type="submit" id="submit" onclick="chuyenDoi()"></label>
+</div>
+<p id="ketQua1">kết quả</p>
+
+<script>
+    let donVi;
+    let ketQua;
+    let giaTriDauVao;
+    function chuyenDoi() {
+
+        donVi = document.getElementById("chonDonVi").value;
+        giaTriDauVao = document.getElementById("giaTriDauVao").value;
+
+        if (donVi == meter){
+            ketQua = giaTriDauVao*0.305;
+            document.getElementById("ketQua1").innerHTML = giaTriDauVao +"meter"+ "=" + ketQua +"feet";
+        } else {
+            ketQua = giaTriDauVao*3.279;
+            document.getElementById("ketQua1").innerHTML = giaTriDauVao+"feet" + "=" + ketQua +"meter";
+        }
+    }
+</script>
+</body>
+</html>

@@ -5,7 +5,40 @@
     <title>Title</title>
 </head>
 <body>
+<div>
+    <h2>Từ điển Anh - Việt</h2>
+
+    <select id="chonNgonNgu" onchange="">
+        <option value="english">Tiếng Anh</option>
+        <option value="vietnamese">Tiếng Việt</option>
+    </select>
+    <label><input type="text" id="search" placeholder="Nhập từ cần tìm" size="100"></label>
+    <label><input type="submit" id="submit" value="tìm" onclick="timKiem()"></label>
+</div>
+
+<p id="ketQua"> 111</p>
+
+<script>
+    let tuDienAnh = ["go","hello","procced","move","search"];
+    let tuDienViet = ["đi","xin chào","tiến độ","di chuyển","tìm kiếm"];
 
 
+    function timKiem() {
+        let tuKhoa = document.getElementById("search").value;
+        for (i=0;i<tuDienAnh.length; i++){
+            if (tuKhoa == tuDienAnh[i]){
+                document.getElementById("ketQua").innerHTML = tuKhoa +" nghĩa là " +tuDienViet[i];
+                break
+            } else {
+                document.getElementById("ketQua").innerHTML = tuKhoa +"không được tìm thấy";
+            }
+        }
+
+    }
+
+
+
+
+</script>
 </body>
 </html>

@@ -37,8 +37,17 @@
         }
     }
 
-    mangSoNguyenC.concat(mangSoNguyenA,mangSoNguyenB);
-    document.write(mangSoNguyenC)
+    for (i=0;i<10;i++){
+        mangSoNguyenC.push(mangSoNguyenA[i]);
+    }
+
+    for (i=0;i<10;i++){
+        mangSoNguyenC.push(mangSoNguyenB[i]);
+    }
+
+    document.write(mangSoNguyenC.join(""))
+
+
 </script>
 
 
