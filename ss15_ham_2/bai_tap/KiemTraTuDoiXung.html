@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let nhap = prompt("nhập chuỗi: ");
+
+    function isPalindrome(s){
+        let fist;
+        let last;
+        fist = 0;
+        last = s.length-1;
+        let check =true
+
+        while (fist<last){
+            if (s.charAt(fist) == s.charAt(last)){
+                fist++;
+                last--;
+            } else {
+                check = false
+                break
+            }
+        }
+
+        if (check){
+            alert("chuỗi đối xứng");
+        } else {
+            alert("chuỗi không đối xứng")
+        }
+    }
+
+    isPalindrome(nhap)
+
+
+</script>
+</body>
+</html>

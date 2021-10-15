@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let tenNgoiSao =["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let tenChomSao =["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let nhapVao;
+    let i;
+
+    function timKiem() {
+        nhapVao = prompt("nhập tên ngôi sao bạn muốn tìm");
+        if (tenNgoiSao.indexOf(nhapVao)!==-1){
+            let i = tenNgoiSao.indexOf(nhapVao);
+            alert(nhapVao+" thuộc chòm sao "+tenChomSao[i]);
+        } else {
+            alert("không tìm thấy ")
+        }
+
+    }
+
+    timKiem();
+</script>
+</body>
+</html>

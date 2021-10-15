@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>Nhập sản phẩm mới</h2>
+    <label><input type="text" id="nameProduct" placeholder="nhập tên sản phẩm"></label>
+    <label><input type="submit" value="add" onclick="addNewProduct()"></label>
+    <br>
+    <label><input type="text" id="searchName" placeholder="nhập tên sản phẩm"></label>
+    <label><input type="submit" value="search" onclick="searchProduct()"></label>
+</div>
+
+<p id="hienThi"></p>
+<br>
+<p id="hienThiSeach"></p>
+<script>
+    let productList = ["Samsum","Nokia","Soni"];
+    let tableSting;
+    let tableStingSeach;
+
+    function display() {
+        tableSting="<table border=\"1\" style=\"border-collapse: collapse\" >\n" +
+            "<tr>\n" +
+            "<th>STT</th>\n" +
+            "<th>TÊN SẢN PHẨM</th>\n" +
+            "<th>EDIT</th>\n" +
+            "<th>DELETE</th>\n" +
+            "</tr>"
+
+        for (i=0; i<productList.length; i++){
+            tableSting +="<tr>\n" +
+                "<td>"+(i+1)+"</td>\n" +
+                "<td>"+productList[i]+"</td>\n" +
+                "<td><label><input type=\"submit\" value=\"Edit\" onclick=editProductt("+i+")></label></td>\n" +
+                "<td><label><input type=\"submit\" value=\"Delete\" onclick=deleteProduct("+i+")></label></td>\n" +
+                "</tr>"
+        }
+        tableSting +="</table>";
+        document.getElementById("hienThi").innerHTML = tableSting;
+
+    }
+    display();
+
+    function addNewProduct() {
+        let name = document.getElementById("nameProduct").value;
+        if (name!=""){
+            productList.push(name);
+            document.getElementById("nameProduct").value="";
+        }
+        display();
+
+    }
+    function deleteProduct(index) {
+        alert(index);
+        let conf= confirm("Bạn có muốn xóa sản phẩm có tên: "+ productList[index])
+        if (conf){
+            productList.splice(index,1);
+        }
+        display();
+    }
+    function editProductt(index) {
+
+        let newName = prompt("nhập vào tên mới sản phẩm");
+        if (newName!=null&&newName!=""){
+            productList[index]= newName;
+        }
+        display();
+    }
+
+    function searchProduct() {
+
+        let names = document.getElementById("searchName").value;
+        if (productList.indexOf(names)!=-1){
+            let a = productList.indexOf(names);
+            displayseach(a);
+
+        }
+
+    }
+
+    function displayseach(a) {
+        tableStingSeach ="<table style=\"border-collapse: collapse\">\n" +
+            "<tr>\n" +
+            "<th>STT</th>\n" +
+            "<th>TÊN SẢN PHẨM</th>\n" +
+            "<th>EDIT</th>\n" +
+            "<th>DELETE</th>\n" +
+            "</tr>"
+
+        tableStingSeach +="<tr>\n" +
+            "<th>"+(a+1)+"</th>\n" +
+            "<th>"+productList[a]+"</th>\n" +
+            "<td><label><input type=\"submit\" value=\"Edit\" onclick=editProductt("+a+")></label></td>\n" +
+            "<td><label><input type=\"submit\" value=\"Delete\" onclick=deleteProduct("+a+")></label></td>\n" +
+            "</tr>"
+
+        tableStingSeach +="</table>"
+        document.getElementById("hienThiSeach").innerHTML = tableStingSeach;
+    }
+
+
+
+</script>
+
+</body>
+</html>

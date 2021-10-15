@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let nhap = prompt("nhập bán kính hình tròn :");
+    let chuVi;
+    let dienTich
+
+    function ham1(banKinh) {
+        banKinh = parseInt(nhap)
+        dienTich = banKinh*banKinh*Math.PI;
+        chuVi = banKinh*Math.PI*2
+        document.write("chu vì hình tròn là: "+ chuVi +"<br>");
+        document.write("diện tích hình tròn là: "+ dienTich+"<br>");
+    }
+
+    ham1();
+</script>
+</body>
+</html>

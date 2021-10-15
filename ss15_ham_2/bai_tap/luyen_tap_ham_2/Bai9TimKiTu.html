@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let mangKyTu =["a","c","-","12ad2",12,"23a","a"];
+    let kyTuCanTim = "b" ;
+    let count = 0;
+
+    //let mangKyTu =prompt("nhập mảng: ");
+    // let kyTuCanTim = prompt("nhập kí tự cần tìm") ;
+
+    function timKiem(a){
+        a = kyTuCanTim;
+        if (mangKyTu.indexOf(a)!== -1){
+            for (let i=0; i< mangKyTu.length; i++){
+                if (a==mangKyTu[i]){
+                    count++
+                }
+            }
+            document.write("số lần suất hiện của: "+a +"là"+ count+"<br>");
+        } else {
+            document.write("không tìm thấy kí tự cần tìm" +"<br>");
+        }
+    }
+
+    timKiem();
+    document.write(mangKyTu+"<br>");
+</script>
+</body>
+</html>

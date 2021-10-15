@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label>Tham số 1:<input type="number" name="thamso1" id="thamSo1"></label>
+    <br>
+    <label>Tham số 1:<input type="number" name="thamso2" id="thamSo2"></label>
+    <br>
+    <label for="tinhToan"><input type="submit" id="tinhToan" onclick="tinhToan()"></label>
+</div>
+
+<script>
+    let a;
+    let b;
+    let total;
+
+    function tinhToan() {
+        a = parseInt(document.getElementById("thamSo1").value);
+        b = parseInt(document.getElementById("thamSo2").value);
+        if (a>b){
+            alert("tham số 1 lớn hơn");
+        } else {
+            total = a + b;
+            alert("tổng 2 tham số là: "+ total);
+        }
+    }
+
+
+</script>
+</body>
+</html>

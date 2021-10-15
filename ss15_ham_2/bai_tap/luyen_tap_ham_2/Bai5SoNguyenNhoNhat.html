@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.-->
+
+<script>
+    let a;
+    let b;
+    let c;
+    let min;
+
+    function kiemTra() {
+        a = prompt("nhập số nguyên thứ nhất");
+        b = prompt("nhập số nguyên thứ hai");
+        c = prompt("nhập số nguyên thứ ba");
+
+        min = a;
+        if (min>b){
+            min = b;
+            if (min>c){
+                min = c;
+                alert("số nhỏ nhất là: "+min);
+            } else {
+                alert("số nhỏ nhất là: "+min);
+            }
+        } else if (min>c){
+            min = c;
+            alert("số nhỏ nhất là: "+min);
+        } else {
+            alert("số nhỏ nhất là: "+min);
+        }
+    }
+
+    kiemTra();
+    document.write(a+"<br>");
+    document.write(b+"<br>");
+    document.write(c+"<br>");
+</script>
+</body>
+</html>

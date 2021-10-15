@@ -7,7 +7,7 @@
 <body>
 <h3>Nhập số nguyên muốn kiểm tra</h3>
 <input type="number" id="nhapSo">
-<input type="submit" onclick="kiemTraSoNT()">
+<input type="submit" value="kiem tra" onclick="kiemTraSoNT()">
 
 <p id="dauRa"></p>
 <script>
@@ -19,7 +19,7 @@
         if (nhapVao < 2 ){
             document.getElementById("dauRa").innerText = nhapVao+" không phải là số nguyên tố";
 
-        } else if (nhapVao === 2){
+        } else if (nhapVao == 2){
             document.getElementById("dauRa").innerText = nhapVao+" là số nguyên tố";
 
         } else if (nhapVao>2){
@@ -40,6 +40,8 @@
         }
 
     }
+
+    console.log(kiemTraSoNT());
 
 
 </script>
