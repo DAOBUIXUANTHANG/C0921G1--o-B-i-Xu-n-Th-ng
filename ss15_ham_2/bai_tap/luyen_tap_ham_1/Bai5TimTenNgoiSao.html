@@ -9,10 +9,9 @@
 <script>
     let tenNgoiSao =["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
     let tenChomSao =["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
-    let nhapVao;
     let i;
 
-    function timKiem() {
+    function timKiem(nhapVao) {
         nhapVao = prompt("nhập tên ngôi sao bạn muốn tìm");
         if (tenNgoiSao.indexOf(nhapVao)!==-1){
             let i = tenNgoiSao.indexOf(nhapVao);

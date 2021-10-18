@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+
+<script>
+
+    class Rectangle{
+        constructor(x,y,dai,rong) {
+            this.dai = dai;
+            this.rong = rong;
+            this.x =x; // tọa độ x của hình;
+            this.y =y; // tọa độ y của hình
+
+        }
+
+        tinhDienTich(){
+            return this.dai*this.rong;
+        }
+
+        tinhChuVi(){
+            return (this.dai+this.rong)*2
+        }
+
+        hienThi(){
+            let hienThi = document.getElementById("myCanvas")
+            let ctx = hienThi.getContext("2d")
+            ctx.fillRect(this.x,this.y,this.dai,this.rong);
+        }
+    }
+
+    let hinh1 = new Rectangle(100,200,200,300)
+    let area = hinh1.tinhDienTich();
+    let chuVi = hinh1.tinhChuVi();
+    hinh1.hienThi();
+
+    alert("chu vi"+ chuVi +" dien tich"+ area)
+
+</script>
+</body>
+</html>

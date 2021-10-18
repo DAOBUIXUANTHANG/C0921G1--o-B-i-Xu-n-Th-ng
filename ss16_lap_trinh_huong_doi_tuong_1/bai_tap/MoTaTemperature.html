@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    class Temperature{
+        constructor(c) {
+            if (c>-273){
+                this.c = c;
+            }
+        }
+
+        changeF(){
+            return this.c*9/5 +32;
+        }
+
+        changeK(){
+            return this.c+ 273.15;
+        }
+    }
+
+    nhietDo = new Temperature(25);
+    document.write("độ F là: "+nhietDo.changeF() +" độ Kelvin là: "+nhietDo.changeK() )
+</script>
+
+</body>
+</html>

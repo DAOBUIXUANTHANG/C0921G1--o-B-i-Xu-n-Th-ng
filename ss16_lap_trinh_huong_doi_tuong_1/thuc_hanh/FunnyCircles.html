@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+
+<script>
+
+    class Circle{
+        constructor(x,y,radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+
+        getRandomHex(){
+            return Math.floor(Math.random()*255);
+        }
+
+        getRandomColor(){
+            let red = this.getRandomHex();
+            let green = this.getRandomHex();
+            let blue = this.getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green +")";
+        }
+
+        createCircle(){
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = this.getRandomColor()
+            ctx.fill();
+        }
+    }
+
+    let tron = new Circle(100,100,60)
+    tron.createCircle();
+    tron.createMultipleCircle1();
+
+    // function  createCircle1(){
+    //     let ctx = document.getElementById("myCanvas").getContext("2d");
+    //     let radius = Math.floor(Math.random() * 80);
+    //     let color = tron.getRandomColor();
+    //     let x = Math.random() * window.innerWidth;
+    //     let y = Math.random() * window.innerHeight;
+    //     let circle= new Circle(x, y, radius);
+    //     ctx.beginPath(); // thiết lập bắt đầu vẽ hoặc thiết lập lại nét vẽ hiện tại
+    //     ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+    //     ctx.fillStyle = color;
+    //     ctx.fill();
+    // }
+    // //
+    // createCircle1()
+    //
+    // function createMultipleCircle(){
+    //     for(let i = 0; i < 30; i++){
+    //         createCircle1();
+    //     }
+    // }
+    //
+    //
+    // createMultipleCircle();
+
+
+</script>
+</body>
+</html>

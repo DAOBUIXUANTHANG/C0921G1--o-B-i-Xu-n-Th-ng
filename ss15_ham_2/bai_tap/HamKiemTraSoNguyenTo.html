@@ -13,8 +13,8 @@
 <script>
     let check;
 
-    function kiemTraSoNT() {
-        let nhapVao = document.getElementById("nhapSo").value;
+    function kiemTraSoNT(nhapVao) {
+        nhapVao = document.getElementById("nhapSo").value;
 
         if (nhapVao < 2 ){
             document.getElementById("dauRa").innerText = nhapVao+" không phải là số nguyên tố";
@@ -41,7 +41,6 @@
 
     }
 
-    console.log(kiemTraSoNT());
 
 
 </script>

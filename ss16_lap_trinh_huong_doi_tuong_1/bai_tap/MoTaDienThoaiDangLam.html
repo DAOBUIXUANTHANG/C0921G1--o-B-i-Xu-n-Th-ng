@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+    class Mobile{
+        constructor(battery,editMess,inbox,sendMess) {
+            this.battery = battery;
+            this.editMess = editMess;
+            this.inbox = inbox;
+            this.sendMess = sendMess;
+            this.trangthai = true;
+        }
+
+        turnOn(){
+            return this.trangthai = true;
+        }
+
+        turnOff(){
+            return this.trangthai = false;
+        }
+
+        pinGiam(){
+            if (this.battery >0){
+                battery--;
+            }
+        }
+
+        check(){
+            if(this.trangthai){
+                alert("dt đang bật");
+            } else {
+                alert("dt đang tắt");
+            }
+
+        editMessage(){
+                this.editMess = prompt("nhập đoạn văn gửi")
+            }
+
+        sendMessage(){
+                this.sendMess = this.editMess;
+            }
+
+        chargeBattery(){
+                if (this.battery !== 100){
+                    this.battery++;
+                }
+            }
+
+        inbox(messageinbox){
+                this.inbox = messageinbox;
+            }
+
+        }
+    }
+</script>
+</body>
+</html>

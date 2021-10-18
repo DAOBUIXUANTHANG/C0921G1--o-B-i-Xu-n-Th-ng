@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    class Date{
+        constructor(day,month,year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+
+        getDay(){
+            return this.day;
+        }
+
+        getMonth(){
+            return this.month;
+        }
+
+        getYear(){
+            return this.year;
+        }
+
+        setDay(ngay){
+            this.day = ngay;
+        }
+
+        setMonth(thang){
+            this.month = thang;
+        }
+
+        setYear(nam){
+            this.year = nam;
+        }
+
+        setDate(ngay,thang,nam){
+            this.day = ngay;
+            this.month = thang;
+            this.year = nam;
+        }
+
+        toDString(){
+            return this.day +"-" +this.month +"-"+ this.year;
+        }
+    }
+
+    let date1 = new Date(14,1,2010);
+    alert(date1.toDString());
+
+    let date2 = new Date();
+    date2.setDate(22,1,2019);
+    alert(date2.toDString());
+
+    let date3 = new Date();
+    date3.setDay(11);
+    date3.setMonth(2);
+    date3.setYear(2000);
+    alert(date3.toDString());
+
+    let datea = new Date(1 ,4 , 2100);
+    let ngay = datea.getDay();
+    let thang = datea.getMonth();
+    let nam = datea.getYear();
+    alert("ngay "+ ngay +" thang "+ thang + " năm "+ nam);
+
+
+
+
+</script>
+</body>
+</html>
