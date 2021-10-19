@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    class BongDen{
+        constructor(name) {
+            this.name = name;
+            this.statusLamp = true;
+        }
+
+        // getStatusLamp(){
+        //     if (this.statusLamp){
+        //         return document.write("đèn sáng"+"<br>")
+        //     } else {
+        //         return document.write("bóng đèn đang tắt"+"<br>")
+        //     }
+        // }
+
+        getStatusLamp(){
+            if (this.statusLamp){
+                document.write("đèn sáng <br>" );
+            } else {
+                document.write("đèn tắt <br>" );
+            }
+        }
+    }
+
+    class SwitchButton{
+        constructor() {
+            this.statusSwitch = false;
+            this.bongDen ;
+        }
+
+        getStatusSwitchButton(){
+            if (this.statusSwitch){
+                return document.write( "trạng thái: công tắc bật <br>")
+            } else {
+                return document.write("trạng thái: công tắc tắt <br>")
+            }
+
+        }
+
+        turnOnLamp() {
+            this.statusSwitch = true;
+            this.bongDen.statusLamp = this.statusSwitch
+            this.getStatusSwitchButton()
+
+        }
+
+        turnOffLamp() {
+            this.statusSwitch = false;
+            this.bongDen.statusLamp = this.statusSwitch
+            this.getStatusSwitchButton()
+
+        }
+
+        ketNoiBongDen(den){
+            this.bongDen = den;
+            this.bongDen.statusLamp = this.statusSwitch;
+        }
+
+    }
+
+
+    let swithbutton1 = new SwitchButton();
+    let den1 =new BongDen("b1");
+    swithbutton1.getStatusSwitchButton()
+    swithbutton1.ketNoiBongDen(den1);;
+    den1.getStatusLamp();
+    swithbutton1.turnOnLamp()
+    den1.getStatusLamp()
+    swithbutton1.turnOffLamp();
+    den1.getStatusLamp();
+    swithbutton1.turnOnLamp()
+    den1.getStatusLamp()
+    swithbutton1.turnOffLamp();
+    den1.getStatusLamp();
+    swithbutton1.turnOnLamp()
+    den1.getStatusLamp()
+
+
+
+
+
+
+</script>
+</body>
+</html>
