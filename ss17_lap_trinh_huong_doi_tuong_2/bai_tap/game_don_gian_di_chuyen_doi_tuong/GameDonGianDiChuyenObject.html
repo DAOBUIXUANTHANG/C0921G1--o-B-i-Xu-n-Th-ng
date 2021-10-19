@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+<div id="game" ></div>
+<!--<script src="../png/script.js"></script>-->
+<!--<img src="../png/CharizardX.png" id="chaz">-->
+
+<script>
+    class Hero{
+        constructor(image, top, left, size) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+        }
+
+        getHeroElement(){
+            return '<img width="'+ this.size + '"' +
+                ' height="'+ this.size + '"' +
+                ' src="' + this.image +'"' +
+                ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+        }
+
+        moveRight(){
+            this.left += 20;
+            console.log('ok: ' + this.left);
+        }
+
+        moveLeft(){
+            this.left -= 20;
+            console.log('ok: ' + this.left);
+        }
+        
+        moveDown(){
+            this.top += 20;
+            console.log('ok: ' + this.left);
+        }
+        
+        moveTop(){
+            this.left -= 20;
+            console.log('ok: ' + this.left);
+        }
+
+
+    }
+    
+    var hero = new Hero('CharizardX.png', 20, 30, 200);
+    
+    function start(){
+        if(hero.left < window.innerWidth - hero.size){
+            hero.moveRight();
+        }
+
+        if(hero.top < window.innerHeight - hero.size){
+            hero.moveDown();
+        }
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start, 500)
+    }
+    // chuaxong
+    // function moveRight1() {
+    //     document.getElementById('game').innerHTML = hero.getHeroElement();
+    //     hero.moveRight()
+    // }
+    //
+    // function moveLeft1() {
+    //     document.getElementById('game').innerHTML = hero.getHeroElement();
+    //     hero.moveLeft()
+    // }
+    //
+    // function moveDown1() {
+    //     document.getElementById('game').innerHTML = hero.getHeroElement();
+    //     hero.moveDown()
+    // }
+    //
+    // function moveTop1() {
+    //     document.getElementById('game').innerHTML = hero.getHeroElement();
+    //     hero.moveTop()
+    // }
+    //
+    // function moveSelection(evt) {
+    //     switch (evt.keyCode) {
+    //         case 37:
+    //             moveLeft1();
+    //             break;
+    //         case 39:
+    //             moveRight1();
+    //             break;
+    //         case 38:
+    //             moveTop1();
+    //             break;
+    //         case 40:
+    //             moveDown1();
+    //             break;
+    //     }
+    // }
+
+    start();
+
+</script>
+</body>
+</html>

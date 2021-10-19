@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+
+</div>
+<script>
+    class Human{
+        constructor(name,gender,weight) {
+            this.name = name;
+            this.gender = gender ;
+            this.weight = weight;
+        }
+
+        getHuman(){
+
+            return "tên: "+ this.getName() +"cân nặng: "+ this.getweight() + "giới tính: " +this.getgender();
+        }
+
+        getName(){
+            return this.name;
+        }
+
+        getweight(){
+            return this.weight;
+        }
+
+        getgender(){
+            if(this.gender){
+                return this.gender = "Nam"
+            } else {
+                return this.gender = "Nũ"
+            }
+        }
+
+        kiemTraApple(trongLuong){
+            document.write("khối lượng quả táo là: "+trongLuong.weight +"<br>")
+        }
+
+        noiChuyen(mess){
+            document.write(mess +"<br>")
+        }
+
+        eat(tao){
+            if (tao.weight !==0){
+                tao.weight--;
+                this.weight++;
+            } else {
+                alert("k có gì để ăn")
+            }
+
+        }
+
+        timHieuNguoiKhac(human){
+            return human.getHuman()
+        }
+
+    }
+
+    class Apple{
+        constructor() {
+            this.weight = 10;
+        }
+
+        getApple(){
+            if (this.weight!==0){
+                return this.weight
+            }
+        }
+
+    }
+
+    hu1 = new Human("Adam",true,50);
+    hu2 = new Human("Eval",false,50);
+    tao1 = new Apple();
+    hu1.noiChuyen("Xin chao! tôi là Adam");
+    hu2.noiChuyen("Xin chao! tôi là Eva");
+    hu1.noiChuyen("có 1 quả táo kìa, bạn có muốn ăn nó k ");
+    hu2.noiChuyen("có chứ, cảm ơn bạn ");
+    hu2.eat(tao1);
+    hu2.noiChuyen("bạn cũng cắn 1 miếng đi ");
+    hu1.noiChuyen("ukm, chúng mình cùng ăn nhé ");
+    hu2.eat(tao1);
+    hu2.eat(tao1);
+    hu1.eat(tao1);
+    hu1.eat(tao1);
+    hu1.eat(tao1);
+    hu1.noiChuyen("quả táo còn bao nhiêu nhỉ");
+    hu1.kiemTraApple(tao1);
+    document.write(hu1.timHieuNguoiKhac(hu2)+"<br>");
+    hu2.eat(tao1);
+    hu2.eat(tao1);
+    hu2.eat(tao1);
+    hu2.eat(tao1);
+    hu1.kiemTraApple(tao1);
+
+
+
+</script>
+</body>
+</html>

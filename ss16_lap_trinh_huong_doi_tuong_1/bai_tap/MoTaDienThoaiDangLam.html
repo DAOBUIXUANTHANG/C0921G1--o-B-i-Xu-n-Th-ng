@@ -10,54 +10,66 @@
 
 <script>
     class Mobile{
-        constructor(battery,editMess,inbox,sendMess) {
+        constructor(battery) {
             this.battery = battery;
-            this.editMess = editMess;
-            this.inbox = inbox;
-            this.sendMess = sendMess;
+            this.soanThu = "";
+            this.hopThuNhan = [];
+            this.hopThuGui = [];
             this.trangthai = true;
         }
 
-        turnOn(){
-            return this.trangthai = true;
+        turnOnOff(){
+            return this.trangthai = !this.trangthai;
         }
 
-        turnOff(){
-            return this.trangthai = false;
-        }
 
-        pinGiam(){
-            if (this.battery >0){
-                battery--;
-            }
-        }
-
-        check(){
+        kiemTraPing(){
             if(this.trangthai){
                 alert("dt đang bật");
             } else {
                 alert("dt đang tắt");
             }
 
-        editMessage(){
-                this.editMess = prompt("nhập đoạn văn gửi")
+        }
+
+
+        soanThaoTinNhan(mess){
+                this.soanThu = mess;
+                this.battery--;
             }
 
-        sendMessage(){
-                this.sendMess = this.editMess;
+        guiTinNhan(dienthoai,mess){
+                this.hopThuGui.push(this.soanThu);
+                dienthoai.inbox.push((this.soanThu));
+                this.battery--;
             }
 
-        chargeBattery(){
-                if (this.battery !== 100){
-                    this.battery++;
+
+        xacPing(){
+                if (this.battery <100){
+                    this.battery = 100
                 }
             }
 
         inbox(messageinbox){
-                this.inbox = messageinbox;
+                this.hopThuNhan.push(messageinbox);
+                this.battery--;
             }
 
-        }
+        xemTinNhanDen(){
+                for(let i=0; i< this.hopThuNhan.length; i++){
+                    document.write(this.hopThuNhan[i].join(""));
+                }
+                this.battery--;
+            }
+
+        xemTinNhanGui(){
+                for ( i=0; i<this.hopThuGui.length; i++){
+                    document.write(this.hopThuGui[i].join(""));
+                }
+                this.battery--;
+            }
+
     }
 </script>
 </body>
