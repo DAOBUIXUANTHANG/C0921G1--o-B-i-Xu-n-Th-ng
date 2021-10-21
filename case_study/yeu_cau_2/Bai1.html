@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let result1;
+
+    do {
+        luong = prompt("xin nhập lương (đơn vị triệu vnd): ");
+        if (luong == parseInt(luong) && luong >0){
+            result1 = tinhThue(luong);
+            break;
+        } else {
+            alert("xin nhập đúng số liệu: ")
+        }
+    } while (!(luong === parseInt(luong) && luong >0))
+    
+    function tinhThue(luong) {
+        let thue;
+        if (luong > 15){
+            thue = luong*20/100;
+        } else if (luong>7){
+            thue = luong*15/100;
+        } else {
+            thue = luong*5/100;
+        }
+
+        return thue;
+    }
+
+    document.write("tiền thuế là: "+ result1 + "(triệu vnd)")
+</script>
+</body>
+</html>
