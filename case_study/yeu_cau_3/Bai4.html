@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let so = prompt("nhập số: ")
+    // let so = 123457689;
+    let x = so.toString()
+    let so1 = [];
+    let chuSo =["không","một","hai","ba","bốn", "năm", "sáu", "bảy", "tám", "chín"];
+
+    for (let i=0; i< x.length; i++){
+        switch (x[i]) {
+            case "0":
+                so1.push(chuSo[0]);
+                break
+            case "1":
+                so1.push(chuSo[1]);
+                break
+            case "2":
+                so1.push(chuSo[2]);
+                break
+            case "3":
+                so1.push(chuSo[3]);
+                break
+            case "4":
+                so1.push(chuSo[4]);
+                break
+            case "5":
+                so1.push(chuSo[5]);
+                break
+            case "6":
+                so1.push(chuSo[6]);
+                break
+            case "7":
+                so1.push(chuSo[7]);
+                break
+            case "8":
+                so1.push(chuSo[8]);
+                break
+            case "9":
+                so1.push(chuSo[9]);
+                break
+        }
+    }
+
+    document.write(so);
+    document.write("<br>");
+    document.write(so1.join(" "));
+
+
+</script>
+</body>
+</html>

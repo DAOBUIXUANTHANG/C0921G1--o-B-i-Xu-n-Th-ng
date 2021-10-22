@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.-->
+
+<script>
+    arr = [
+        [0,2,3,4], [5,6,7,8] ,[9,32,21,23], [101,-1,2,3]
+    ]
+
+    // arr1 = [
+    //     [0,2,2,4], [5,6,7,8] ,[9,32,21,23], [101,-1,2,3],[120,31,257,251]
+    // ]
+    //
+    // arr1 = [
+    //     [0,2,1,3], [5,6,7,8] ,[9,32,21,23], [101,-1,2,3],[15,51,61,71]
+    // ]
+
+    function timSoNT(arr){
+
+        let mangChuyenDoi = [];
+        let mangSoNguyenTo = [];
+
+        for (let i=0; i<arr.length; i++){
+            for (let j=0; j<arr[i].length; j++){
+                mangChuyenDoi.push(arr[i][j]);
+            }
+        }
+
+        for (i=0; i< mangChuyenDoi.length; i++){
+            if (mangChuyenDoi[i]===2){
+                mangSoNguyenTo.push(mangChuyenDoi[i])
+            } else if (mangChuyenDoi[i]>2){
+                let check = true;
+                for (j=2;j< mangChuyenDoi[i]; j++){
+                    if (mangChuyenDoi[i]%j===0){
+                        check =false;
+                        break;
+                    }
+                }
+                if (check){
+                    mangSoNguyenTo.push(mangChuyenDoi[i])
+                }
+            }
+
+        }
+
+        document.write("mảng nhập vào bao gộp "+ arr.length +" mảng con: <br>")
+        for (i=0; i< arr.length; i++){
+            document.write("mang con thu "+(i+1)+ " : "+arr[i].join(" "));
+            document.write("<br>");
+        }
+        document.write("mang chuyển đổi : "+mangChuyenDoi.join(" ")+"<br>");
+        document.write("số nguyên tố trong mảng là: "+mangSoNguyenTo.join(" ")+"<br>");
+    }
+
+    timSoNT(arr);
+</script>
+
+</body>
+</html>

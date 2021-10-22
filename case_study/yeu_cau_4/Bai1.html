@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    chuoiTest ="tRuong    TaN   HAI "
+    chuoiTest = chuoiTest.toString()
+    chuoiTest1 ="tRuong    TaN   HAI1 "
+
+    
+    function chuanHoaKyTu(dauVao) {
+        let a;
+        dauRa =[];
+
+        for (let i=0; i<dauVao.length;i++){
+            if (dauVao[i] === " " && dauVao[i-1] ===" "){
+
+            } else {
+                if (i===0){
+                    a = dauVao[i].toUpperCase();
+                    dauRa.push(a);
+                } else if (dauVao[i] !== " "&& dauVao[i-1] ===" "){
+                    a = dauVao[i].toUpperCase();
+                    dauRa.push(a);
+                } else {
+                    a = dauVao[i].toLowerCase();
+                    dauRa.push(a);
+                }
+            }
+        }
+        document.write(dauVao +" <br>");
+        document.write(dauRa.join(""));
+        return dauRa
+    }
+    chuanHoaKyTu(chuoiTest1);
+    // let b = chuanHoaKyTu(chuoiTest).join("");
+    // document.write(b+ "<br>")
+    // let c = chuoiTest.split(" ");
+    // document.write(c)
+    // document.write("<br>")
+    // let d = chuanHoaKyTu(chuoiTest).split(" ");
+    // document.write(d)
+
+    
+
+</script>
+</body>
+</html>
