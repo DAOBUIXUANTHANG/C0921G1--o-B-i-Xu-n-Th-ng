@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <h1>XỔ SỐ CODEGYM</h1>
+    <label><input type="text" min="0" max="99" value="" id="so1" onclick="chonSo(this.value)" ></label>
+    <label><input type="text" value="2"></label>
+    <label><input type="text" value="2"></label>
+    <label><input type="text" value="2"></label>
+    <label><input type="text" value="2"></label>
+    <label><input type="text" value="2"></label>
+    <br>
+    <label><input type="text" value="1"></label>
+    <label><input type="text" value="2"></label>
+    <label><input type="text" value="2"></label>
+    <label><input type="text" value="2"></label>
+    <label><input type="text" value="2"></label>
+    <label><input type="text" value="2"></label>
+    <br>
+    <label><input type="submit" value="chọn số" onclick="randomNumberList()"></label>
+    <label><input type="submit" value="random" onclick="add()"></label>
+</div>
+
+<table border="1" style="border-collapse: collapse" >
+    <tr>
+        <th onclick="arlet()">12</th>
+        <th>12</th>
+        <th>12</th>
+        <th>12</th>
+        <th>12</th>
+        <th>12</th>
+    </tr>
+</table>
+
+<p id="ketQua"></p>
+<P id="random"></P>
+<script>
+    class SoXo{
+        constructor() {
+            this.numberList =[];
+            this.num1 = 0;
+            this.num2 = 0;
+            this.num3 = 0;
+            this.num4 = 0;
+            this.num5 = 0;
+            this.num6 = 0;
+        }
+
+        getNumberList(){
+            return this.numberList;
+        }
+
+        setNum1(number){
+            this.num1 = number;
+            this.numberList[0] = this.num1;
+        }
+
+        setNum2(number){
+            this.num2 = number;
+            this.numberList[1] = this.num2;
+        }
+
+        setNum3(number){
+            this.num3 = number;
+            this.numberList[2] = this.num3;
+        }
+
+        setNum4(number){
+            this.num4 = number;
+            this.numberList[3] = this.num4;
+        }
+
+        setNum5(number){
+            this.num5 = number;
+            this.numberList[4] = this.num5;
+        }
+
+        setNum6(number){
+            this.num6 = number;
+            this.numberList[5] = this.num6;
+        }
+
+        setNumberList(number){
+            this.numberList.push(number);
+        }
+
+    }
+
+    function chonSoHayRandom() {
+        check1 = confirm("bạn muốn chọn số hay ngẫu nhiên: ");
+        
+
+    }
+
+    function display(daySo) {
+        let tableSting ="<table border=\"1\" style=\"border-collapse: collapse\" >\n"
+        for (let i =0; i< daySo.length; i++){
+            tableSting += "<tr>\n" +
+                "        <th onclick=\"chonSo()\">12</th>\n" +
+                "        <th>12</th>\n" +
+                "        <th>12</th>\n" +
+                "        <th>12</th>\n" +
+                "        <th>12</th>\n" +
+                "        <th>12</th>\n" +
+                "    </tr>"
+        }
+        tableSting += "</table>"
+        document.getElementById("ketQua").innerHTML=tableSting;
+    }
+
+
+
+    function add() {
+        let word = "11"
+        display(word)
+    }
+
+
+    function chonSo() {
+        n = prompt("nhập số chọn: ");
+        while (!(n>= 0&& n<100)){
+            alert("nhap sai");
+            n = prompt("nhập số chọn: ");
+        }
+    }
+
+
+    function randomNumberList() {
+        let randomNumberList = new SoXo();
+
+        for (let i=0; i<6;i++ ){
+            numberRd = Math.floor(Math.random() * 99);
+            randomNumberList.setNumberList(numberRd);
+        }
+
+
+    }
+
+
+
+</script>
+</body>
+</html>

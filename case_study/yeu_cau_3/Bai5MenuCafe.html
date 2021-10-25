@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>Menu</h1>
+    <p>click vào trong menu để gọi</p>
+    <ol>
+        <li>Cafe</li>
+        <li>Cam vắt</li>
+        <li>Nước ép cà rốt</li>
+        <li>Nước ép cà chua</li>
+        <li>Nước lọc</li>
+        <li>Nước dừa</li>
+    </ol>
+
+    <input type="submit" onclick="orderDrink()">
+</div>
+
+<p id="tongGiaTien">tổng: </p>
+<p id="baoGom"></p>
+
+<script>
+    function orderDrink() {
+        let stt;
+        let drink =['cafe', 'Cam vắt', 'Nước ép cà rốt', 'Nước ép cà chua', 'Nước lọc', 'Nước dừa'];
+        let price =[10000,25000,25000,20000,5000,20000]
+        let money;
+        let sum =0;
+        let soLuong;
+
+        do {
+            stt = prompt("nhập số stt của menu muốn gọi: ");
+            if (stt<7 && stt>0){
+                soLuong = parseInt(prompt("dồ uống "+drink[stt-1]+" có giá là: "+price[stt-1]+" xin nhập số lượng: "));
+                money = soLuong*price[stt-1];
+                sum = sum + money;
+                soLuongMoiMon.push(soLuong);
+            } else if (stt ==7){
+                break;
+            }else {
+                alert("xin nhập đúng stt của đồ uống: ");
+            }
+        } while (stt!=7);
+        document.getElementById("tongGiaTien").innerHTML = "tổng giá tiền là: "+sum+" vnd <br>";
+
+    }
+
+
+</script>
+</body>
+</html>
