@@ -7,15 +7,16 @@
 <body>
 
 <script>
+    // Bài 3: Vẽ tam giác cân đặc có chiều cao h. Ví dụ: h = 5
 
     let h = parseInt(prompt("nhap kich thuoc tam giac: "))
     let i ;
     let j ;
 
 
-    for ( i = 1; i <= h; i++){
+    for ( i = 0; i < h; i++){
         for (j=1; j< h*2 ;j++){
-            if (j>h-i && j<h+i){
+            if (j>h-i-1 && j<h+i+1){
                 document.writeln("*")
             } else {
                 document.writeln("&nbsp&nbsp")

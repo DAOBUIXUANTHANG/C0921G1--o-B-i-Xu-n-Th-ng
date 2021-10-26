@@ -22,27 +22,27 @@
         document.write("số ký tự khác trong chuỗi vừa nhập là: "+n);
     }
 
-    function tim(s) {
-        let so = 0;
-        for (i=0; i<s.length; i++){
-            let check = true;
-            for (let j=0; j<i; j++){
-                if (s[j] == s[i]){
-                    check = false
-                    break;
-                }
-            }
-            if (check){
-                so += 1;
-            }
-        }
-
-        document.write("số ký tự khác trong chuỗi vừa nhập là: "+so);
-    }
+    // function tim(s) {
+    //     let so = 0;
+    //     for (i=0; i<s.length; i++){
+    //         let check = true;
+    //         for (let j=0; j<i; j++){
+    //             if (s[j] == s[i]){
+    //                 check = false
+    //                 break;
+    //             }
+    //         }
+    //         if (check){
+    //             so += 1;
+    //         }
+    //     }
+    //
+    //     document.write("số ký tự khác trong chuỗi vừa nhập là: "+so);
+    // }
 
     timKyTuKhac(s);
     document.write("<br>");
-    tim(s);
+    // tim(s);
 </script>
 </body>
 </html>

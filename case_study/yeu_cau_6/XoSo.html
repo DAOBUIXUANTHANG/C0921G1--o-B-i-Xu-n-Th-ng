@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p id="bangVeSo"></p>
+</div>
+
+<button id="muaVe" onclick="menu()">mua ve</button>
+<button id="kiemTra" onclick="displayGiaiThuong()">kiem tra</button>
+
+
+<script>
+
+    let mangVeSo =[];
+
+    class VeSo  {
+        constructor(so1,so2,so3,so4,so5,so6,giaiThuong ="") {
+            this.so1 = so1;
+            this.so2 = so2;
+            this.so3 = so3;
+            this.so4 = so4;
+            this.so5 = so5;
+            this.so6 = so6;
+            this.giaiThuong = giaiThuong;
+        }
+
+        getSo1(){
+            return this.so1;
+        }
+
+        getSo2(){
+            return this.so2;
+        }
+
+        getSo3(){
+            return this.so3;
+        }
+
+        getSo4(){
+            return this.so4;
+        }
+
+        getSo5(){
+            return this.so5;
+        }
+
+        getSo6(){
+            return this.so6;
+        }
+
+        setSo1(number){
+            this.so1 = number;
+        }
+
+        setSo2(number){
+            this.so2 = number;
+        }
+
+        setSo3(number){
+            this.so3 = number;
+        }
+
+        setSo4(number){
+            this.so4 = number;
+        }
+
+        setSo5(number){
+            this.so5 = number;
+        }
+
+        setSo6(number){
+            this.so6 = number;
+        }
+
+        getGiaiThuong(){
+            return this.giaiThuong;
+        }
+
+        setGiaiThuong(giaiThuong){
+            this.giaiThuong = giaiThuong;
+        }
+
+        getNumber(){
+            return [this.so1,this.so2,this.so3,this.so4,this.so5,this.so6]
+        }
+
+        setRandomNumber(){
+            this.so1 = Math.floor(Math.random()*99);
+            this.so2 = Math.floor(Math.random()*99);
+            this.so3 = Math.floor(Math.random()*99);
+            this.so4 = Math.floor(Math.random()*99);
+            this.so5 = Math.floor(Math.random()*99);
+            this.so6 = Math.floor(Math.random()*99);
+        }
+
+        getInfoVe(){
+            return this.getNumber().join("-") + this.giaiThuong;
+        }
+
+    }
+
+    function menu() {
+        let choose;
+        if (mangVeSo.length<4){
+            choose = parseInt(prompt("bạn muốn chọn số hay random \n"+
+                "1. Chọn số \n"+
+                "2. Random"));
+            if (choose === 1){
+                nhapVeSo()
+            } else if (choose ===2){
+                randomVeSo()
+            }
+        } else {
+            alert("bạn chỉ được mua 4 vé")
+        }
+    }
+
+
+    function displayVeSo(arr) {
+        let stringTable =""
+        for (let i=0; i< arr.length; i++){
+            stringTable  += "<input value='"+ arr[i].getSo1()+  "'>"+
+                "<input value='"+ arr[i].getSo2()+  "'>"+
+                "<input value='"+ arr[i].getSo3()+  "'>"+
+                "<input value='"+ arr[i].getSo4()+  "'>"+
+                "<input value='"+ arr[i].getSo5()+  "'>"+
+                "<input value='"+ arr[i].getSo6()+  "'>"+ "<br>"
+        }
+        document.getElementById("bangVeSo").innerHTML = stringTable;
+    }
+
+    function randomVeSo() {
+        let veSo = new VeSo();
+        veSo.setRandomNumber();
+        mangVeSo.push(veSo);
+        displayVeSo(mangVeSo);
+    }
+
+    function nhapVeSo() {
+        let arrNum =[];
+        for (let i =0; i<6; i++){
+            arrNum[i] = parseInt(prompt("nhập vào số thứ "+(i+1)+" của vé số: "))
+        }
+        let veSoTuChon = new VeSo(arrNum[0],arrNum[1],arrNum[2],arrNum[3],arrNum[4],arrNum[5]);
+        mangVeSo.push(veSoTuChon);
+        displayVeSo(mangVeSo);
+    }
+
+
+
+    function checkVeSo(veSo) {
+        let count =0;
+        let veTrungGiai = [11,22,33,55,44,66];
+        for (let i = veTrungGiai.length; i>0; i--){
+            if (veTrungGiai[i] === veSo.getNumber()[i]){
+                count++
+            } else {
+                break;
+            }
+        }
+        switch (count) {
+            case 6:
+                veSo.setGiaiThuong(1);
+                break;
+            case 5:
+                veSo.setGiaiThuong(2);
+                break;
+            case 4:
+            case 3:
+                veSo.setGiaiThuong(3);
+                break;
+            default:
+                veSo.setGiaiThuong(4)
+        }
+    }
+
+    function displayGiaiThuong() {
+        let result ="";
+        for (let i=0; i< mangVeSo.length; i++){
+            checkVeSo(mangVeSo[i]);
+            switch (mangVeSo[i].setGiaiThuong()) {
+                case 1:
+                    result = "giai nhat";
+                    break;
+                case 1:
+                    result = "giai nhi";
+                    break;
+                case 1:
+                    result = "giai ba";
+                    break;
+                case 1:
+                    result = "giai khuyen khich";
+                    break;
+            }
+        }
+        if (result == " "){
+            alert(" chuc ban may man lan sau: ");
+        } else
+            alert("chuc ban trung "+ result);
+    }
+
+</script>
+</body>
+</html>

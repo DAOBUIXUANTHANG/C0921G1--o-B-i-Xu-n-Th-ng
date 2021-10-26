@@ -8,23 +8,9 @@
 
 <div>
     <h1>XỔ SỐ CODEGYM</h1>
-    <label><input type="text" min="0" max="99" value="" id="so1" onclick="chonSo(this.value)" ></label>
-    <label><input type="text" value="2"></label>
-    <label><input type="text" value="2"></label>
-    <label><input type="text" value="2"></label>
-    <label><input type="text" value="2"></label>
-    <label><input type="text" value="2"></label>
-    <br>
-    <label><input type="text" value="1"></label>
-    <label><input type="text" value="2"></label>
-    <label><input type="text" value="2"></label>
-    <label><input type="text" value="2"></label>
-    <label><input type="text" value="2"></label>
-    <label><input type="text" value="2"></label>
-    <br>
-    <label><input type="submit" value="chọn số" onclick="randomNumberList()"></label>
-    <label><input type="submit" value="random" onclick="add()"></label>
 </div>
+
+<input value="" >
 
 <table border="1" style="border-collapse: collapse" >
     <tr>
@@ -87,59 +73,61 @@
 
         setNumberList(number){
             this.numberList.push(number);
+
+
         }
 
     }
-
-    function chonSoHayRandom() {
-        check1 = confirm("bạn muốn chọn số hay ngẫu nhiên: ");
-        
-
-    }
-
-    function display(daySo) {
-        let tableSting ="<table border=\"1\" style=\"border-collapse: collapse\" >\n"
-        for (let i =0; i< daySo.length; i++){
-            tableSting += "<tr>\n" +
-                "        <th onclick=\"chonSo()\">12</th>\n" +
-                "        <th>12</th>\n" +
-                "        <th>12</th>\n" +
-                "        <th>12</th>\n" +
-                "        <th>12</th>\n" +
-                "        <th>12</th>\n" +
-                "    </tr>"
-        }
-        tableSting += "</table>"
-        document.getElementById("ketQua").innerHTML=tableSting;
-    }
-
-
-
-    function add() {
-        let word = "11"
-        display(word)
-    }
-
-
-    function chonSo() {
-        n = prompt("nhập số chọn: ");
-        while (!(n>= 0&& n<100)){
-            alert("nhap sai");
-            n = prompt("nhập số chọn: ");
-        }
-    }
-
-
-    function randomNumberList() {
-        let randomNumberList = new SoXo();
-
-        for (let i=0; i<6;i++ ){
-            numberRd = Math.floor(Math.random() * 99);
-            randomNumberList.setNumberList(numberRd);
-        }
-
-
-    }
+    //
+    // function chonSoHayRandom() {
+    //     check1 = confirm("bạn muốn chọn số hay ngẫu nhiên: ");
+    //
+    //
+    // }
+    //
+    // function display(daySo) {
+    //     let tableSting ="<table border=\"1\" style=\"border-collapse: collapse\" >\n"
+    //     for (let i =0; i< daySo.length; i++){
+    //         tableSting += "<tr>\n" +
+    //             "        <th onclick=\"chonSo()\">12</th>\n" +
+    //             "        <th>12</th>\n" +
+    //             "        <th>12</th>\n" +
+    //             "        <th>12</th>\n" +
+    //             "        <th>12</th>\n" +
+    //             "        <th>12</th>\n" +
+    //             "    </tr>"
+    //     }
+    //     tableSting += "</table>"
+    //     document.getElementById("ketQua").innerHTML=tableSting;
+    // }
+    //
+    //
+    //
+    // function add() {
+    //     let word = "11"
+    //     display(word)
+    // }
+    //
+    //
+    // function chonSo() {
+    //     n = prompt("nhập số chọn: ");
+    //     while (!(n>= 0&& n<100)){
+    //         alert("nhap sai");
+    //         n = prompt("nhập số chọn: ");
+    //     }
+    // }
+    //
+    //
+    // function randomNumberList() {
+    //     let randomNumberList = new SoXo();
+    //
+    //     for (let i=0; i<6;i++ ){
+    //         numberRd = Math.floor(Math.random() * 99);
+    //         randomNumberList.setNumberList(numberRd);
+    //     }
+    //
+    //
+    // }
 
 
 
